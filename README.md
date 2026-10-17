@@ -4,6 +4,14 @@ A fast, local-first party planner for the 16 recruitable companions in *Mount & 
 
 This is version 2 of the original **Companion Harmony Visualizer Tool**, first developed by [AL2D](https://github.com/al2d-x) as a university project in October 2023. The implementation is new; the behavior and recovered companion dataset were reconstructed from the author's original Java application.
 
+## Why version 2?
+
+I originally built this as my first larger private university project. After moving into full-time work in software development and support, I wanted to return to it with the experience I have gained since then: preserve its purpose, understand what my earlier self built, and turn it into something modern, maintainable, and easy to use.
+
+## AI disclosure
+
+The visual design and frontend implementation of version 2 were produced entirely with AI under my direction and review. I supplied the original software, requirements, product decisions, and validation. My own strengths are in backend development and technical support rather than frontend design, so I chose to be transparent about using AI for that part of the renewal.
+
 ## Features
 
 - All 16 companions, including costs, noble status, skills, likes, dislikes, and objections
