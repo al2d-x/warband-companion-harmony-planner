@@ -1,0 +1,13 @@
+{
+  "name": "warband-companion-harmony-planner",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A modern, local-first party planner for Mount & Blade: Warband companions.",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

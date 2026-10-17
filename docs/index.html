@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Build a compatible Mount & Blade: Warband companion party and inspect its skills, costs, and conflicts.">
+  <meta name="theme-color" content="#17150f">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Warband Companion Harmony Planner</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#companions">Skip to companion selection</a>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Warband Companion Harmony Planner home">
+      <span class="brand-mark" aria-hidden="true">W</span>
+      <span><strong>Warband Companion</strong><small>Harmony Planner</small></span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#companions">Companions</a>
+      <a href="#analysis">Analysis</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">A field guide for Calradia</p>
+        <h1 id="hero-title">Build a party that <em>holds together.</em></h1>
+        <p class="lede">Choose companions, expose personality clashes, and cover the skills your campaign needs—before spending a single denar.</p>
+        <a class="primary-action" href="#companions">Plan your party <span aria-hidden="true">↓</span></a>
+      </div>
+      <aside class="hero-note" aria-label="Privacy information">
+        <span class="note-icon" aria-hidden="true">◇</span>
+        <div><strong>Runs entirely in your browser</strong><span>No accounts, analytics, or party data sent anywhere.</span></div>
+      </aside>
+    </section>
+
+    <section class="metrics" aria-label="Current party summary" aria-live="polite">
+      <article><span>Party size</span><strong id="metric-party">0 / 16</strong></article>
+      <article><span>Recruitment</span><strong id="metric-cost">0 denars</strong></article>
+      <article><span>Conflicts</span><strong id="metric-conflicts">0</strong></article>
+      <article><span>Party skills</span><strong id="metric-skills">0 / 10</strong></article>
+    </section>
+
+    <section class="planner" id="companions" aria-labelledby="companions-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">The company</p>
+          <h2 id="companions-title">Choose your companions</h2>
+          <p>Green means a friendly connection; red means someone in the current party objects.</p>
+        </div>
+        <label class="search-control">
+          <span class="sr-only">Search companions</span>
+          <span aria-hidden="true">⌕</span>
+          <input id="search" type="search" placeholder="Find a companion…" autocomplete="off">
+        </label>
+      </div>
+
+      <div class="planner-layout">
+        <aside class="party-controls" aria-labelledby="presets-title">
+          <div>
+            <p class="control-label" id="presets-title">Proven parties</p>
+            <div class="preset-list" id="preset-list"></div>
+          </div>
+          <div class="selection-summary">
+            <span>Selected</span>
+            <strong id="selected-count">0 companions</strong>
+            <div class="control-actions">
+              <button class="button button-secondary" id="clear-button" type="button">Clear</button>
+              <button class="button button-primary" id="export-button" type="button">Export</button>
+            </div>
+          </div>
+        </aside>
+        <div>
+          <p id="search-status" class="search-status" aria-live="polite"></p>
+          <div class="companion-grid" id="companion-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="analysis" id="analysis" aria-labelledby="analysis-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Party analysis</p>
+          <h2 id="analysis-title">Read the room</h2>
+          <p>Compatibility is calculated across the whole selection, independent of click order.</p>
+        </div>
+      </div>
+      <div class="relationship-grid">
+        <article class="relationship-panel conflict-panel">
+          <div class="panel-title"><span class="status-dot conflict"></span><h3>Conflicts</h3><strong id="conflict-count">0</strong></div>
+          <div id="conflict-list" class="relationship-list"></div>
+        </article>
+        <article class="relationship-panel harmony-panel">
+          <div class="panel-title"><span class="status-dot harmony"></span><h3>Positive ties</h3><strong id="harmony-count">0</strong></div>
+          <div id="harmony-list" class="relationship-list"></div>
+        </article>
+      </div>
+
+      <div class="skills-heading">
+        <div><h3>Skill coverage</h3><p>See which party members contribute each starting skill.</p></div>
+        <label class="switch"><input id="relevant-toggle" type="checkbox" checked><span aria-hidden="true"></span>Party-relevant only</label>
+      </div>
+      <div class="skill-grid" id="skill-grid"></div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div>
+        <p class="eyebrow">About the project</p>
+        <h2 id="about-title">A student project, reforged.</h2>
+      </div>
+      <div class="about-copy">
+        <p>Created by <a href="https://github.com/al2d-x" rel="noreferrer">AL2D</a> as a modern successor to the original Companion Harmony Visualizer Tool, first developed as a university project in October 2023.</p>
+        <p>This independent fan tool is not affiliated with or endorsed by TaleWorlds Entertainment. Mount &amp; Blade: Warband names and setting belong to their respective owners.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Warband Companion Harmony Planner v2.0.0</span>
+    <a href="https://github.com/al2d-x/warband-companion-harmony-planner" rel="noreferrer">Source on GitHub ↗</a>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
