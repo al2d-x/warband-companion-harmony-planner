@@ -10,7 +10,7 @@ I originally built this as my first larger private university project. After mov
 
 ## AI disclosure
 
-The visual design and frontend implementation of version 2 were produced entirely with AI under my direction and review. I supplied the original software, requirements, product decisions, and validation. My own strengths are in backend development and technical support rather than frontend design, so I chose to be transparent about using AI for that part of the renewal.
+Full transparency: I used AI for the entire visual design and frontend implementation of version 2. Frontend has never been my strongest area—I am much more at home in backend development and technical support—so I treated AI as my frontend partner for this renewal. I supplied the original project, requirements, product decisions, and final checks.
 
 ## Features
 
