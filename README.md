@@ -27,6 +27,10 @@ Then open <http://localhost:8080>.
 
 Opening `index.html` directly is not supported because the app uses native JavaScript modules.
 
+## Windows launcher
+
+Double-click **Launch Warband Companion Planner.url** to open the published application in your default browser. It requires an internet connection but does not require Java, Python, Node.js, or an installation.
+
 ## Test
 
 Node.js 20 or newer is required. The app itself does not require Node.js; it is only used for the test suite.
