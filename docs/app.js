@@ -108,8 +108,8 @@ function renderCompanions(analysis) {
         <div class="card-relations">
           <div class="likes"><span>Likes </span><strong>${companion.likes.map(companionName).join(", ")}</strong></div>
           <div class="dislikes"><span>Avoids </span><strong>${companion.dislikes.map(companionName).join(", ")}</strong></div>
+          <button class="details-button" type="button" data-details="${companion.id}" aria-label="Details for ${escapeHtml(companion.name)}" title="Details">i</button>
         </div>
-        <button class="details-button" type="button" data-details="${companion.id}" aria-label="Details for ${escapeHtml(companion.name)}" title="Details">i</button>
       </article>
     `;
   }).join("");
@@ -234,7 +234,8 @@ elements.presets.addEventListener("click", (event) => {
   if (!button) return;
   state.selected = new Set(selectionFromPreset(button.dataset.preset));
   render();
-  showToast(`Party ${button.textContent.trim()} loaded`);
+  const preset = presets.find(({ id }) => id === button.dataset.preset);
+  showToast(`${preset?.name ?? "Party"} loaded`);
 });
 
 elements.search.addEventListener("input", (event) => {

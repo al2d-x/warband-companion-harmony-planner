@@ -294,7 +294,9 @@ a { color: var(--accent); }
   position: relative;
   min-width: 0;
   min-height: 115px;
-  padding: 9px 28px 8px 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 9px 10px 8px;
   border: 1px solid var(--line);
   background: #131410;
   cursor: pointer;
@@ -314,6 +316,7 @@ a { color: var(--accent); }
 }
 .companion-name {
   overflow: hidden;
+  padding-right: 20px;
   color: var(--text);
   font-size: .93rem;
   font-weight: 800;
@@ -347,9 +350,10 @@ a { color: var(--accent); }
 }
 .card-relations {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.15fr) 20px;
+  align-items: center;
   gap: 5px;
-  margin-top: 7px;
+  margin-top: auto;
   padding-top: 6px;
   border-top: 1px solid #292b24;
   font-size: .58rem;
@@ -359,12 +363,10 @@ a { color: var(--accent); }
 .likes strong { color: var(--good); }
 .dislikes strong { color: var(--bad); }
 .details-button {
-  position: absolute;
-  right: 6px;
-  bottom: 5px;
-  z-index: 2;
   width: 20px;
   height: 20px;
+  display: grid;
+  place-items: center;
   padding: 0;
   border: 0;
   border-radius: 50%;
@@ -607,20 +609,31 @@ a { color: var(--accent); }
 }
 
 @media (min-width: 1600px) and (min-height: 850px) {
-  body { font-size: 15px; }
-  .panel-header p, .search-status { font-size: .7rem; }
-  .companion-name { font-size: 1rem; }
-  .companion-meta { font-size: .63rem; }
-  .skill-pill { font-size: .62rem; }
-  .card-relations { font-size: .63rem; }
-  .details-button { font-size: .77rem; }
-  .panel-title h3, .skills-heading h3 { font-size: .74rem; }
-  .relationship-row strong { font-size: .69rem; }
-  .relationship-row span { font-size: .61rem; }
-  .empty-state { font-size: .67rem; }
-  .skill-card h4 { font-size: .72rem; }
-  .skill-card small { font-size: .57rem; }
-  .skill-providers { font-size: .62rem; }
+  body { font-size: 16px; }
+  .app-header { height: 58px; padding-inline: 16px; }
+  .app-shell { height: calc(100dvh - 58px); gap: 8px; padding: 10px; }
+  .command-bar { min-height: 48px; padding: 8px; }
+  .summary-strip { min-height: 46px; }
+  .workspace { grid-template-columns: minmax(0, 1fr) 475px; gap: 8px; }
+  .panel-header { min-height: 52px; padding: 9px 12px; }
+  .panel-header p, .search-status { font-size: .72rem; }
+  .companion-grid { gap: 7px; padding: 7px; }
+  .companion-card { padding: 11px 12px 10px; }
+  .companion-name { font-size: 1.03rem; }
+  .companion-meta { margin: 5px 0 8px; font-size: .66rem; }
+  .card-skills { gap: 4px; }
+  .skill-pill { padding: 3px 5px; font-size: .65rem; }
+  .card-relations { padding-top: 8px; font-size: .69rem; }
+  .details-button { font-size: .82rem; }
+  .panel-title h3, .skills-heading h3 { font-size: .77rem; }
+  .relationship-row { padding: 7px 8px; }
+  .relationship-row strong { font-size: .73rem; }
+  .relationship-row span { font-size: .65rem; }
+  .empty-state { font-size: .7rem; }
+  .skill-card { min-height: 54px; padding: 8px 10px; }
+  .skill-card h4 { font-size: .76rem; }
+  .skill-card small { font-size: .6rem; }
+  .skill-providers { font-size: .66rem; }
 }
 
 @media (max-height: 760px) and (min-width: 1200px) {
